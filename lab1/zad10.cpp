@@ -16,7 +16,7 @@ double f (double z, int k)
     if(k < 0)
         return 0;
 
-    return f(z, k - 1) + (pow(-1, k) * pow(z, (2 * k) + 1)) / factorial((2 * k) + 1);
+    return (pow(-1, k) * pow(z, (2 * k) + 1)) / factorial((2 * k) + 1);
 }
 
 int main(void)
