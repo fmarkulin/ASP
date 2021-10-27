@@ -3,10 +3,13 @@
 
 void f (int polje[], int n, int m)
 {
-    for(int i = 0; i < n; i++)
+    if(n == 0)
     {
-        polje[i] = pow(m, i);
+        return;
     }
+
+    polje[n - 1] = pow(m, (n - 1));
+    f(polje, n - 1, m);
 }
 
 int main(void)
@@ -35,6 +38,8 @@ int main(void)
             std::cout << polje[i] << ", ";
         }
     }
+
+    delete[] polje;
 
     return 0;
 }
