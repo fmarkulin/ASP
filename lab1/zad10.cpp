@@ -1,22 +1,15 @@
 #include <iostream>
 #include <cmath>
 
-int factorial(int n)
-{
-    if(n == 0)
-    {
-        return 1;
-    }
-
-    return factorial(n - 1) * n;
-}
-
 double f (double z, int k)
 {
     if(k < 0)
         return 0;
 
-    return (pow(-1, k) * pow(z, (2 * k) + 1)) / factorial((2 * k) + 1);
+    if(k == 0)
+        return z;
+    
+    return (-1 * pow(z, 2) * f(z, k - 1)) / (((2 * k) + 1) * (2 * k));
 }
 
 int main(void)
