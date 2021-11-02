@@ -12,7 +12,7 @@ char *ostaviSlova(std::string ulaz)
         }
     }
 
-    char* noviNiz = new char[charCount];
+    char* noviNiz = new char[charCount+1];
     int i = 0;
     for(char& c : ulaz)
     {
@@ -22,6 +22,7 @@ char *ostaviSlova(std::string ulaz)
             i++;
         }
     }
+    noviNiz[i] = '\0';
 
     return noviNiz;
 }
