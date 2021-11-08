@@ -21,43 +21,46 @@ double exp(double x, int n, int *fakt, double *xpot) //sum k=0 -> n od (x^k)/k!
 int main(void)
 {
     int n;
-    std::cout << "Upišite željenu veličinu polja: ";
-    std::cin >> n;
+    do
+    {
+        std::cout << "Upišite željenu veličinu polja: ";
+        std::cin >> n;
+        if(n < 1)
+            std::cout << "Upisani n je manji od 1!" << std::endl;
+    } while (n < 1);
 
     double x;
     std::cout << "Upišite željenu vrijednost broja x: ";
     std::cin >> x;
 
-    // if (n > 0)
-    // {
-    int *nFactorial = new int[n + 1];
-    for (int i = 0; i < n + 1; i++)
+    int *nFactorial = new int[n];
+    for (int i = 0; i < n; i++)
     {
         nFactorial[i] = factorial(i);
     }
     std::cout << "Ispis faktorijela:" << std::endl;
     std::cout << "[";
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n - 1; i++)
     {
         std::cout << nFactorial[i] << ", ";
     }
-    std::cout << nFactorial[n] << "]" << std::endl;
+    std::cout << nFactorial[n - 1] << "]" << std::endl;
 
-    double *xPot = new double[n + 1];
-    for (int i = 0; i < n + 1; i++)
+    double *xPot = new double[n];
+    for (int i = 0; i < n; i++)
     {
         xPot[i] = pow(x, i);
     }
     std::cout << "Ispis potencija:" << std::endl;
     std::cout << "[";
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n - 1; i++)
     {
         std::cout << xPot[i] << ", ";
     }
-    std::cout << xPot[n] << "]" << std::endl;
+    std::cout << xPot[n - 1] << "]" << std::endl;
 
-    double *A = new double[n + 1];
-    for (int i = 0; i < n + 1; i++)
+    double *A = new double[n];
+    for (int i = 0; i < n; i++)
     {
         A[i] = exp(x, i, nFactorial, xPot);
     }
@@ -65,32 +68,15 @@ int main(void)
     std::cout << "[";
     std::cout << std::fixed;
     std::cout << std::setprecision(6);
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n - 1; i++)
     {
         std::cout << A[i] << ", ";
     }
-    std::cout << A[n] << "]" << std::endl;
+    std::cout << A[n - 1] << "]" << std::endl;
 
     delete[] nFactorial;
     delete[] xPot;
     delete[] A;
-    // }
-    // else
-    // {
-    //     int nFactorial = 1;
-    //     std::cout << "Ispis faktorijela:" << std::endl;
-    //     std::cout << "[" << nFactorial << "]" << std::endl;
-
-    //     double xPot = 1;
-    //     std::cout << "Ispis potencija:" << std::endl;
-    //     std::cout << "[" << xPot << "]" << std::endl;
-
-    //     double A = exp(x, n, &nFactorial, &xPot);
-    //     std::cout << std::fixed;
-    //     std::cout << std::setprecision(6);
-    //     std::cout << "Ispis polja:" << std::endl;
-    //     std::cout << "[" << A << "]" << std::endl;
-    // }
 
     return 0;
 }
