@@ -4,7 +4,7 @@
 
 int zbrojiKvadrate(int polje[], int n)
 {
-    if (n < 0)
+    if(n == 0)
     {
         return 0;
     }
@@ -33,10 +33,11 @@ int main(void)
         }
     } while (n <= 0);
 
-    int *A = new int[n]();
+    int *A = new int[n];
     srand(time(NULL));
     for (int i = 0; i < n; i++)
     {
+        //rand() % (max_number + 1 - minimum_number) + minimum_number
         A[i] = rand() % 100 + 1;
     }
 
