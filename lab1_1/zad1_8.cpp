@@ -29,7 +29,7 @@ public:
     {
         for (int i = 0; i < str.size(); i++)
         {
-            if (!(isalpha(str[i])) || str[i] == ' ')
+            if (!(isalpha(str[i])))
             {
                 str.erase(str.begin() + i);
                 i--;
@@ -49,13 +49,13 @@ std::ostream &operator<<(std::ostream &os, const SanitizedString &str)
 int main(void)
 {
     std::string ulaz;
-    std::cout << "Upišite znakovni niz: ";
+    std::cout << "Upišite ulazni string ili znakovni niz: ";
     std::getline(std::cin, ulaz);
 
     SanitizedString sanitized(ulaz);
 
-    std::cout << "Početni string: " << ulaz << std::endl;
-    std::cout << "Sanitizirani string: " << sanitized << std::endl;
+    std::cout << "Ulazni string/znakovni niz: " << ulaz << std::endl;
+    std::cout << "Sanitizirani string/znakovni niz: " << sanitized << std::endl;
 
     return 0;
 }
