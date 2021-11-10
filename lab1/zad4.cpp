@@ -25,7 +25,7 @@ int main(void)
     {
         std::cout << "Upišite željenu veličinu polja: ";
         std::cin >> n;
-        if(n < 1)
+        if (n < 1)
             std::cout << "Upisani n je manji od 1!" << std::endl;
     } while (n < 1);
 

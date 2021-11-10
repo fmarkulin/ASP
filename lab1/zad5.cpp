@@ -3,7 +3,6 @@
 template <typename T>
 int binarnoTrazi(T polje[], int n, T x)
 {
-    bool found = false;
     int left = 0;
     int right = n - 1;
     int index = -1;
@@ -12,7 +11,6 @@ int binarnoTrazi(T polje[], int n, T x)
         int middle = (left + right) / 2;
         if (polje[middle] == x)
         {
-            found = true;
             index = middle;
             break;
         }
