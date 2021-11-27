@@ -22,20 +22,19 @@ int provjeriZagrade(char *niz, int *zastavica)
 
 int main(void)
 {
-    char polje1[8] = {'[','[','[',']','[',']',']'};
-    char polje2[8] = {']',']','[','[','[',']',']'};
-    char polje3[9] = {'[','[','[',']','[',']',']',']'};
-    char polje4[3] = {'[','[',']'};
+    // char polje1[7] = {'[','[','[',']','[',']',']'};
+    char polje2[7] = {']',']','[','[','[',']',']'};
+    // char polje3[8] = {'[','[','[',']','[',']',']',']'};
+    // char polje4[3] = {'[','[',']'};
+    // char polje5[4] = {'[','[',']',']'};
 
     int zastavica = 0;
     int *pz = &zastavica;
-    std::cout << provjeriZagrade(polje1, pz) << std::endl;
-    zastavica = 0;
+    // std::cout << provjeriZagrade(polje1, pz) << std::endl;
     std::cout << provjeriZagrade(polje2, pz) << std::endl;
-    zastavica = 0;
-    std::cout << provjeriZagrade(polje3, pz) << std::endl;
-    zastavica = 0;
-    std::cout << provjeriZagrade(polje4, pz) << std::endl;
+    // std::cout << provjeriZagrade(polje3, pz) << std::endl;
+    // std::cout << provjeriZagrade(polje4, pz) << std::endl;
+    // std::cout << provjeriZagrade(polje5, pz) << std::endl;
 
     return 0;
 }
