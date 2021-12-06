@@ -23,7 +23,7 @@ public:
 
     void ispis()
     {
-        for(int i = 0; i <= top; i++)
+        for(int i = MAX - 1; i >= 0; i--)
         {
             std::cout << stack[i] << " ";
         }
@@ -37,7 +37,8 @@ int main(void)
 
     for(int i = 0; i < 101; i++)
     {
-        stog->push(i);
+        int element = rand();
+        stog->push(element);
     }
 
     stog->ispis();
