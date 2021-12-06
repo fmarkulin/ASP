@@ -46,6 +46,7 @@ int main(void)
         stog->push(element);
     }
 
+    //for testing stack behaviour
     // for(int i = 0; i < 101; i++)
     // {
     //     stog->push(i);

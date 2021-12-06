@@ -12,7 +12,7 @@ public:
     bool push(int element)
     {
         top++;
-        if(top > 99)
+        if(top > MAX - 1)
         {
             top--;
             return false;
