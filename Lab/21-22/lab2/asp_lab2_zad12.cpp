@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 class Osoba
 {
@@ -19,8 +18,10 @@ public:
 
     Osoba &operator=(const Osoba &osoba)
     {
+        // std::cout << &(this->ime) << " : " << &osoba.ime << std::endl;
         this->ime = osoba.ime;
         this->starost = osoba.starost;
+        // std::cout << &(this->ime) << " : " << &osoba.ime << std::endl;
 
         return *this;
     }
